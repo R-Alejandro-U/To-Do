@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { mongoDB } from "./config/Database.conection";
+import { mongoDB } from "./config/Database.connection";
 import { PORT } from "./config/envs.config";
 import server from "./server";
 
