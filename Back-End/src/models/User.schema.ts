@@ -1,8 +1,9 @@
-import mongoose from "mongoose";
-export const UserSchema = new mongoose.Schema({
+import { Model, model, Schema } from "mongoose";
+import { IUser } from "../types/User.interface";
+const UserSchema: Schema<IUser> = new Schema<IUser>({
     name: {
         type: String,
-        require: true
+        require: true,
     }, 
     birthday: {
         type: Date,
@@ -12,5 +13,10 @@ export const UserSchema = new mongoose.Schema({
         type: String,
         require: true,
         unique: true
-    }
-})
+    },
+    password: {
+        type: String,
+        require: true
+    },
+});
+export const User: Model<IUser> = model<IUser>("users", UserSchema);
